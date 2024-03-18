@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TechTrain.ReusableModules.WebApi.Models;
+using Webapi.ApiValidators;
 
 namespace TechTrain.ReusableModules.WebApi.Controllers
 {
@@ -15,6 +16,7 @@ namespace TechTrain.ReusableModules.WebApi.Controllers
         }
 
         [HttpGet]
+        [DisableValidator<ApiLowerCaseValidator>()]
         [Route("/carts/{cartId}/items")]
         public Task<IEnumerable<CartItem>> ListCartItems([FromRoute]int cartId)
         {
