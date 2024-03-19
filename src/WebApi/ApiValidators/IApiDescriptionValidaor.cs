@@ -3,6 +3,6 @@ using Webapi.Contract;
 
 public interface IApiDescriptionValidaor
 {
-    public ValidationResult Validate(IReadOnlyList<ApiDescription> apiDescription);
+    public ValidationResult Validate(ApiDescription apiDescription);
 
 }
